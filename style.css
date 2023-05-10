@@ -1,0 +1,6 @@
+.container {
+    margin: 150px auto;
+    width: 600px;
+    height: 600px;
+    border: solid rgb(104, 104, 104) 5px;
+}
