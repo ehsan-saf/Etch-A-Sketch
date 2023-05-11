@@ -20,8 +20,3 @@ main {
     display: flex;
     flex-wrap: wrap;
 }
-
-.sqr {
-    height: 40px;
-    width: 40px;
-}
