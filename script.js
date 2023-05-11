@@ -1,5 +1,11 @@
 const grid = document.querySelector(".grid");
+const colorPicker = document.getElementById("colorPicker");
 const gridDimention = 640;
+let color = "red";
+
+colorPicker.addEventListener("change", e => {
+    color = e.target.value;
+});
 
 createSquares(20);
 
@@ -17,9 +23,11 @@ function createSquares(quantity) {
     }
 }
 
+
+
 function drawColor(e) {
     if(e.buttons === 1){
-        e.target.style.backgroundColor = "red";
+        e.target.style.backgroundColor = color;
     }   
 }
 
