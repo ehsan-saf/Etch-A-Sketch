@@ -11,6 +11,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 70px;
 }
 
 .grid {
@@ -19,4 +20,14 @@ main {
     border: solid rgb(104, 104, 104) 5px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.colorContainer {
+    align-self: flex-start;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 25px;
+    font-weight: bold;
 }
