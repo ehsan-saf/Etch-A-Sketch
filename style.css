@@ -27,9 +27,21 @@ main {
     flex-wrap: wrap;
 }
 
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
 .colorContainer {
-    align-self: flex-start;
-    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.sliderContainer {
     display: flex;
     flex-direction: column;
     gap: 20px;

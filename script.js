@@ -1,5 +1,6 @@
 const grid = document.querySelector(".grid");
 const colorPicker = document.getElementById("colorPicker");
+
 const gridDimention = 640;
 let color = "red";
 
