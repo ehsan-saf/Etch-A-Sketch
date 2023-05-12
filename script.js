@@ -23,6 +23,7 @@ function createSquares(quantity) {
     const size = (gridDimention / quantity) + "px";
     for (let i = 1; i <= quantity ** 2; i++) {
         const div = document.createElement("div");
+        div.classList.add("sqr");
         div.style.width = size;
         div.style.height = size;
         div.addEventListener("mouseover", drawColor);
