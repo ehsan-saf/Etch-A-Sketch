@@ -45,6 +45,31 @@ main {
     font-weight: bold;
 }
 
+#colorPicker {
+    appearance: none;
+    border: none;
+    outline: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 50%;
+}
+
+#colorPicker::-webkit-color-swatch {
+    border-radius: 50%;
+}
+
+#colorPicker:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
 .sliderContainer {
     display: flex;
     flex-direction: column;

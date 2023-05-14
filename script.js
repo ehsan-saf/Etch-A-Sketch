@@ -4,7 +4,7 @@ const slider = document.getElementById("sizeSlide");
 const sizeText = document.querySelector(".size");
 
 const gridDimention = 640;
-let color = "red";
+let color = "#000000";
 
 colorPicker.addEventListener("change", e => {
     color = e.target.value;
