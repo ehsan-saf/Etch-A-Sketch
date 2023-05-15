@@ -65,7 +65,8 @@ main {
     border-radius: 50%;
 }
 
-#colorPicker:hover {
+#colorPicker:hover,
+#rainbowButton:hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
@@ -76,4 +77,22 @@ main {
     gap: 20px;
     font-size: 25px;
     font-weight: bold;
+}
+
+#sizeSlide {
+    width: 180px;
+}
+
+#rainbowButton {
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
+}
+
+#rainbowButton.active {
+    background-color: cyan;
 }

@@ -2,6 +2,7 @@ const grid = document.querySelector(".grid");
 const colorPicker = document.getElementById("colorPicker");
 const slider = document.getElementById("sizeSlide");
 const sizeText = document.querySelector(".size");
+const rainbowButton = document.getElementById("rainbowButton");
 
 const gridDimention = 640;
 let color = "#000000";
@@ -14,6 +15,10 @@ slider.addEventListener("input", e => {
     const size = e.target.value;
     createSquares(size);
     sizeText.textContent = `${size} X ${size}`;
+});
+
+rainbowButton.addEventListener("click", (e) => {
+    rainbowButton.classList.toggle("active");
 });
 
 createSquares(20);
