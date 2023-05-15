@@ -17,8 +17,20 @@ slider.addEventListener("input", e => {
     sizeText.textContent = `${size} X ${size}`;
 });
 
-rainbowButton.addEventListener("click", (e) => {
+rainbowButton.addEventListener("click", () => {
     rainbowButton.classList.toggle("active");
+    const squares = document.querySelectorAll(".sqr");
+    if(rainbowButton.classList.contains("active")){
+        squares.forEach(sqr =>
+             {
+                sqr.onmouseover = drawRandomColor;
+             });
+    }
+    else {
+        squares.forEach(sqr => {
+                sqr.onmouseover = drawColor;
+        });
+    }
 });
 
 createSquares(20);
@@ -47,4 +59,10 @@ function drawColor(e) {
     }   
 }
 
-
+function drawRandomColor(e) {
+    const r = Math.floor(Math.random() * 257);
+    const g = Math.floor(Math.random() * 257);
+    const b = Math.floor(Math.random() * 257);
+    randomColor = `rgb(${r},${g},${b})`;
+    e.target.style.backgroundColor = randomColor;
+}
