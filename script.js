@@ -60,9 +60,11 @@ function drawColor(e) {
 }
 
 function drawRandomColor(e) {
+    if(e.buttons === 1){
     const r = Math.floor(Math.random() * 257);
     const g = Math.floor(Math.random() * 257);
     const b = Math.floor(Math.random() * 257);
     randomColor = `rgb(${r},${g},${b})`;
     e.target.style.backgroundColor = randomColor;
+    }
 }

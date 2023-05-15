@@ -15,7 +15,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 70px;
+    gap: 140px;
 }
 
 .grid {
