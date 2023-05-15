@@ -7,6 +7,8 @@ const rainbowButton = document.getElementById("rainbowButton");
 const gridDimention = 640;
 let color = "#000000";
 
+// Settings events -------------------
+
 colorPicker.addEventListener("change", e => {
     color = e.target.value;
 });
@@ -33,6 +35,9 @@ rainbowButton.addEventListener("click", () => {
     }
 });
 
+// Settings events -------------------
+
+
 createSquares(20);
 
 function createSquares(quantity) {
@@ -51,7 +56,7 @@ function createSquares(quantity) {
     }
 }
 
-
+// Drawing color changer functions ---------------
 
 function drawColor(e) {
     if(e.buttons === 1){
@@ -68,3 +73,5 @@ function drawRandomColor(e) {
     e.target.style.backgroundColor = randomColor;
     }
 }
+
+// Drawing color changer functions ---------------

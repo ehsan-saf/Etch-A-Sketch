@@ -94,5 +94,5 @@ main {
 }
 
 #rainbowButton.active {
-    background-color: cyan;
+    background-color: rgb(139, 255, 249);
 }
