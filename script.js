@@ -3,20 +3,29 @@ const colorPicker = document.getElementById("colorPicker");
 const slider = document.getElementById("sizeSlide");
 const sizeText = document.querySelector(".size");
 const rainbowButton = document.getElementById("rainbowButton");
+const clearButton = document.getElementById("clearButton");
 
 const gridDimention = 640;
-let color = "#000000";
+let color = "rgba(0, 0, 0, 0.1)";
 
 // Settings events -------------------
 
 colorPicker.addEventListener("change", e => {
-    color = e.target.value;
+    const pickedColor = e.target.value;
+    if(pickedColor == "#000000"){
+        color = "rgba(0, 0, 0, 0.1)";
+    }
+    else{
+        color = pickedColor;
+    }
+    
 });
 
 slider.addEventListener("input", e => {
     const size = e.target.value;
     createSquares(size);
     sizeText.textContent = `${size} X ${size}`;
+    rainbowButton.classList.remove("active");
 });
 
 rainbowButton.addEventListener("click", () => {
@@ -33,6 +42,11 @@ rainbowButton.addEventListener("click", () => {
                 sqr.onmouseover = drawColor;
         });
     }
+});
+
+clearButton.addEventListener("click", () => {
+    const squares = document.querySelectorAll(".sqr");
+    squares.forEach(sqr => sqr.style.backgroundColor = "white");
 });
 
 // Settings events -------------------
@@ -60,7 +74,18 @@ function createSquares(quantity) {
 
 function drawColor(e) {
     if(e.buttons === 1){
-        e.target.style.backgroundColor = color;
+       const sqrColor = e.target.style.backgroundColor;
+       const colorObject = tinycolor(sqrColor);
+       const rgb = colorObject.toRgb()
+       if(color === "rgba(0, 0, 0, 0.1)" && sqrColor.length !== 0 
+           && Number(rgb.r + rgb.g + rgb.b) == 0){
+            const alphaValue = rgb.a;
+            colorObject.setAlpha(alphaValue + 0.1);
+            e.target.style.backgroundColor = colorObject.toRgbString();
+       }
+       else {
+          e.target.style.backgroundColor = color;
+       }
     }   
 }
 
